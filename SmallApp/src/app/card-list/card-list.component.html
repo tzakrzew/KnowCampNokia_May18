@@ -1,0 +1,44 @@
+<mat-grid-list cols="6" rowHeight="400px" class="small-grid">
+<mat-grid-tile class="small-tile">
+    <mat-card class="small-card shadow-card">
+      <mat-card-header class="small-header">
+        <mat-card-title class="small-tile">User details</mat-card-title>
+        <mat-card-subtitle class="small-subtile">{{username}}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="{{usergif}}" alt="{{username}}" class="content-image">
+      <mat-card-content class="small-content">
+        <div>This user has following role:</div>
+        <div *ngFor="let role of roles">* {{role}}</div>
+      </mat-card-content>
+    </mat-card>
+</mat-grid-tile>
+<mat-grid-tile *ngFor="let card of cards" class="small-tile">
+  <mat-card class="small-card shadow-card">
+    <mat-card-header class="small-header">
+      <mat-card-title class="small-tile">Hero Card</mat-card-title>
+      <mat-card-subtitle class="small-subtile">{{card.name}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{card.giphyUrl}}" alt="{{card.name}}" class="content-image">
+    <mat-card-content class="small-content">
+      <div>Type: {{card.heroType}}</div>
+      <div>Attack: {{card.attack}}</div>
+      <div>Defence: {{card.defence}}</div>
+    </mat-card-content>
+  </mat-card>
+</mat-grid-tile>
+  <mat-grid-tile *ngFor="let fruit of fruits" class="small-tile">
+    <mat-card class="small-card shadow-card">
+      <mat-card-header class="small-header">
+        <mat-card-title class="small-tile">Fruit</mat-card-title>
+        <mat-card-subtitle class="small-subtile">{{fruit.name}}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="{{fruit.giphyUrl}}" alt="{{fruit.name}}" class="content-image">
+      <mat-card-content class="small-content">
+        <div>Type: {{fruit.type}}</div>
+        <div>Sweetnes: {{fruit.sweetness}}</div>
+        <div>Defence: {{fruit.size}}</div>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+
+</mat-grid-list>

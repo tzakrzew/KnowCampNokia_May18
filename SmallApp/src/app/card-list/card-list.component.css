@@ -1,0 +1,49 @@
+.small-tile {
+  margin: 5px;
+}
+
+.small-card {
+  width: 100%;
+  background-color: ghostwhite;
+  color: black;
+  height: 100%;
+  padding: 5px;
+}
+
+.small-header {
+  background-color: lightgray;
+  height: 20%;
+  width: 100%;
+}
+
+.small-tile {
+  color: black;
+  font-size: larger;
+  margin: 5px;
+}
+.small-subtile {
+  color: darkblue;
+  font-size: medium;
+  margin: 5px;
+}
+
+.content-image {
+  width: 100%;
+  height: 50%;
+  margin: 0px;
+}
+
+.small-grid {
+  background-color: lightgrey;
+}
+
+.small-content {
+  height: 30%;
+  width: 100%;
+}
+
+.shadow-card {
+  box-sizing: border-box;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.3);
+}
+
