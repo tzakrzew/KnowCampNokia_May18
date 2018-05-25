@@ -20,6 +20,8 @@ FruitService - Backend Servince providing fruits
 7. Start FuritService
 8. Start SmallApp
 
+Keycloak should be available under localhost:8443.
+If not, change it in applicaiton.properties of applications and in initalizer of KeycloakService in SmallApp
 
 ## CardService
 
@@ -29,6 +31,11 @@ Add cert to local java truststore:
 ```
 keytool -import -alias smallcorp -file src/main/resources/smallapp.cer -keystore $JAVA_HOME/jre/lib/security/cacerts
 ```
+Add client to Keycloak:
+* name: secretprovider
+* Client Protocol: openid-connect
+* Access Type: bearer-only
+
 Start app:
 ./greadlew bootRun
 
@@ -37,10 +44,12 @@ Start app:
 
 This is SpringBoot and Gradle app.
 Go to main directory of app.
-Add cert to local java truststore:
-```
-keytool -import -alias smallcorp -file src/main/resources/smallapp.cer -keystore $JAVA_HOME/jre/lib/security/cacerts
-```
+
+Add client to Keycloak:
+* name: fruitprovier
+* Client Protocol: openid-connect
+* Access Type: bearer-only
+
 Start app:
 ./greadlew bootRun
 
@@ -53,6 +62,15 @@ Install dependencies:
 ```
 npm install
 ```
+Add client to Keycloak:
+* name: account (existing one)
+* Client Protocol: openid-connect
+* Access Type: public
+* Standard Flow: enabled
+* Implicit Flow: enabled
+* Valid redirects uri: http://localhost:4200/*
+* Web origins: http://localhost:4200
+
 then start server
 ```
 ng serve
